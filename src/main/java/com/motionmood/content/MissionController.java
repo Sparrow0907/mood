@@ -6,16 +6,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/missions")
 public class MissionController {
 
-    private final AiMissionService aiMissionService;
+    private final MissionService missionService;
 
-    public MissionController(AiMissionService aiMissionService) {
-        this.aiMissionService = aiMissionService;
+    public MissionController(MissionService missionService) {
+        this.missionService = missionService;
     }
 
     @PostMapping("/match")
     public MissionDto matchMission(@RequestBody MatchRequest request) {
-        // Вот здесь мы передаем то, что пришло в запросе!
-        return aiMissionService.getOrCreateMission(request.mood(), request.energy());
+        return missionService.getOrCreateMission(request.mood(), request.energy());
     }
 }
 
