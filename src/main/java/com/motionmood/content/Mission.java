@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "missions")
-public class Mission {
+@Table(name = "missions", schema = "motionmood")public class Mission {
     @Id
     private UUID id;
     private String code;
