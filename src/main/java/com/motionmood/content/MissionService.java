@@ -13,10 +13,10 @@ public class MissionService {
     }
 
     public MissionDto getOrCreateMission(String mood, String energy) {
-        Optional<Mission> existingMission = missionRepository.findBestMatch(mood, energy);
+        Optional<Mission> mission = missionRepository.findRandomMission();
 
-        if (existingMission.isPresent()) {
-            Mission m = existingMission.get();
+        if (mission.isPresent()) {
+            Mission m = mission.get();
             return new MissionDto(m.getCode(), m.getName(), m.getDurationMinutes(), m.getType());
         }
 
