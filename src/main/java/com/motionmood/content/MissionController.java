@@ -19,4 +19,12 @@ public class MissionController {
 }
 
 record MatchRequest(String mood, String energy) {}
-record MissionDto(String id, String title, int durationMinutes, String type) {}
+
+record MissionDto(
+        String id,
+        String code,
+        String title,
+        int durationMinutes,
+        String type,
+        boolean hasMusic
+) {}

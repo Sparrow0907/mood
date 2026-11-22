@@ -17,9 +17,23 @@ public class MissionService {
 
         if (mission.isPresent()) {
             Mission m = mission.get();
-            return new MissionDto(m.getCode(), m.getName(), m.getDurationMinutes(), m.getType());
+            return new MissionDto(
+                    m.getId().toString(),
+                    m.getCode(),
+                    m.getName(),
+                    m.getDurationMinutes(),
+                    m.getType(),
+                    m.isHasMusic()
+            );
         }
 
-        return new MissionDto("fallback", "Подыши 2 минуты", 2, "audio");
+        return new MissionDto(
+                "fallback",
+                "fallback",
+                "Подыши 2 минуты",
+                2,
+                "audio",
+                true
+        );
     }
 }

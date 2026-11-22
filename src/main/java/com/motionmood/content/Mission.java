@@ -16,17 +16,22 @@ public class Mission {
 
     private String type;
 
+    @Column(name = "has_music")
+    private boolean hasMusic;
+
     // Геттеры
     public UUID getId() { return id; }
     public String getCode() { return code; }
     public String getName() { return name; }
     public int getDurationMinutes() { return durationMinutes; }
     public String getType() { return type; }
+    public boolean isHasMusic() { return hasMusic; }
 
-    // Сеттеры (добавлены для сохранения из ИИ)
+    // Сеттеры
     public void setId(UUID id) { this.id = id; }
     public void setCode(String code) { this.code = code; }
     public void setName(String name) { this.name = name; }
     public void setDurationMinutes(int durationMinutes) { this.durationMinutes = durationMinutes; }
     public void setType(String type) { this.type = type; }
+    public void setHasMusic(boolean hasMusic) { this.hasMusic = hasMusic; }
 }
